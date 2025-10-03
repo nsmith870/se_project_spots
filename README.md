@@ -2,20 +2,31 @@
 
 ### Overview  
 
-* Intro  
-* Figma  
-* Images  
+* Image Sharing
+* User Profiles
+* Community Feedback  
+ 
   
 **Intro**
   
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
+This project is called Spots. My project is a simple image sharing platform with profile creation and  community feedback features.
   
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+**Image Sharing**
+ Share your images with our growing community.
+ Upload up to 6 images, (we have plans to improve this feature in future iterations).
+**User Profiles**
+ Create your own profile and customize it to your liking with your own profile picture. 
+
+ **Community Feedback**
+ Get feedback from the your image sharing community with simple and easy to use heart button feature.
+
+ ##dev-notes## 
+ 3 plans for improvement in the future are as follows.
+
+ 1# Improve features for ease of access and function.
+
+ 2# Clean up source code from clutter and find bugs.
+
+ 3# Listen to feedback and send out updates to code as needed.
+
+ ##end-of-dev-notes##
