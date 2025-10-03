@@ -1,0 +1,42 @@
+
+.card__image {
+height: 413px;
+width: 100%;
+object-fit: cover;
+display: block;
+border-radius: 10px;
+}
+.card__title{
+font-family: Poppins;
+font-weight: 500;
+font-size: 20px;
+line-height: 120%;
+
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
+
+}
+.card__content {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.card__like-btn{
+background-image: url(../images/spots-images/heart.svg) ;
+width: 23px;
+height: 20px;
+border: none;
+background-color: transparent;
+
+}
+.card__like-btn:hover {
+ opacity: 40%;
+}
+
+@media screen and (max-width: 627px) {
+  .card__image{
+   max-height: 288px;
+   max-width: 288px;
+  }
+}
