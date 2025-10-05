@@ -11,10 +11,12 @@ font-family: Poppins;
 font-weight: 500;
 font-size: 20px;
 line-height: 120%;
-
+margin: 0;
+max-width: 353px;
 text-overflow: ellipsis;
 white-space: nowrap;
 overflow: hidden;
+padding-bottom: 41px;
 
 }
 .card__content {
@@ -23,7 +25,8 @@ align-items: center;
 justify-content: space-between;
 }
 .card__like-btn{
-background-image: url(../images/spots-images/heart.svg) ;
+background-image: url(../images/spots-images/heart.svg);
+cursor: pointer;
 width: 23px;
 height: 20px;
 border: none;

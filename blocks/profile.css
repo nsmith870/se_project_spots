@@ -47,11 +47,13 @@
   width: 12px;
 }
 .profile__edit-btn{
+  cursor: pointer;
+  display:block;
   margin-top: auto;
-  width: 107.3;
-  height: 16;
+  width: 107.3px;
+  height: 16px;
   border-radius: 90px;
-  opacity: 1;
+  opacity: 0.7;
   top: 56px;
   left: 20px;
   gap: 8px;
@@ -65,6 +67,7 @@
   outline: none;
 }
 .profile__add-btn{
+  cursor: pointer;
   margin-top: auto;
   margin-left: auto;
   height: 52px;
