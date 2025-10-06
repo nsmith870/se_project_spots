@@ -63,7 +63,7 @@
   padding: 0;
 }
 .profile__edit-btn:hover{
-  opacity: 70%;
+  opacity: 100%;
   outline: none;
 }
 .profile__add-btn{
