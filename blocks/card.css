@@ -16,12 +16,12 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  padding-bottom: 41px;
 }
 .card__content {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 12px;
 }
 .card__like-btn {
   background-image: url(../images/spots-images/heart.svg);
@@ -40,5 +40,8 @@
   .card__image {
     max-height: 288px;
     max-width: 288px;
+  }
+  .card__title{
+    max-width: 250px;
   }
 }
