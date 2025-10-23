@@ -30,3 +30,5 @@ This project is called Spots. My project is a simple image sharing platform with
  3# Listen to feedback and send out updates to code as needed.
 
  ##end-of-dev-notes##
+
+ 
