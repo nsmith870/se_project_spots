@@ -15,11 +15,11 @@ const editProfileDescriptionInput = editProfileModal.querySelector(
 editProfileButton.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
-  editProfileModal.classList.add("modal_is-opened");
+  openModal(editProfileModal);
 });
 
 closeModalButton.addEventListener("click", function () {
-  editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 });
 
 const profileAddBtn = document.querySelector(".profile__add-btn");
@@ -31,26 +31,36 @@ const modalCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
 
-//Edit profile Submit Handler Function//
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
+
 function handleEditProfileModalSubmit(evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
 
-  editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 }
+
 editProfileForm.addEventListener("submit", handleEditProfileModalSubmit);
 
 const newPostForm = newPostModal.querySelector(".modal__form");
 const profileLinkInput = newPostModal.querySelector("#profile-link-input");
-const profileCaptionInput = newPostModal.querySelector("#profile-caption-input");
+const profileCaptionInput = newPostModal.querySelector(
+  "#profile-caption-input"
+);
 
 profileAddBtn.addEventListener("click", function () {
-  newPostModal.classList.add("modal_is-opened");
+  openModal(newPostModal);
 });
 
 modalCloseBtn.addEventListener("click", function () {
-  newPostModal.classList.remove("modal_is-opened");
+  closeModal(newPostModal);
 });
 
 function handleNewPostModalSubmit(evt) {
@@ -58,8 +68,6 @@ function handleNewPostModalSubmit(evt) {
 
   console.log(profileLinkInput.value);
   console.log(profileCaptionInput.value);
-
-  newPostModal.classList.remove("modal_is-opened");
 
   newPostForm.reset();
 }
