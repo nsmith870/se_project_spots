@@ -1,10 +1,9 @@
-//Edit Profile Modal//
+
 const editProfileButton = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 const closeModalButton = editProfileModal.querySelector(".modal__close-btn");
 
-//Text Input Selectors Edit Profile//
 const editProfileNameInput = editProfileModal.querySelector(
   "#profile-name-input"
 );
@@ -23,11 +22,9 @@ closeModalButton.addEventListener("click", function () {
 });
 
 const profileAddBtn = document.querySelector(".profile__add-btn");
-
 const newPostModal = document.querySelector("#new-post-modal");
 const modalCloseBtn = newPostModal.querySelector(".modal__close-btn");
 
-//Text Element Selectors//
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
 
