@@ -67,6 +67,8 @@ function handleNewPostModalSubmit(evt) {
   console.log(profileCaptionInput.value);
 
   newPostForm.reset();
+  
+  closeModal(newPostModal);
 }
 
 const addCardModal = document.querySelector("#new-post-modal");
