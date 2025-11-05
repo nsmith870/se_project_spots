@@ -127,4 +127,10 @@
     width: 100%;
     gap: 8px;
   }
+
+  .modal__close-btn{
+    top: 18px;
+    right: 12px;
+  }
 }
+
