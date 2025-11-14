@@ -1,27 +1,31 @@
 const initialCards = [
+  // {
+  //   name: "Golden Gate Bridge",
+  //   link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  // },
   {
-    name: "Val Thorens",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
+    name: "Cliff Sitting on a Bike",
+    link: "https://images.unsplash.com/photo-1534146789009-76ed5060ec70?q=80&w=709&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: "Restaurant terrace",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
+    name: "Early Evening Campfire",
+    link: "https://images.unsplash.com/photo-1486915309851-b0cc1f8a0084?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxib29rbWFya3MtcGFnZXw0fHx8ZW58MHx8fHx8",
   },
   {
-    name: "An outdoor cafe",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
+    name: "Hiking Beside Stone Cairns",
+    link: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxib29rbWFya3MtcGFnZXw1fHx8ZW58MHx8fHx8",
   },
   {
-    name: " A very long bridge, over the forest...",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
+    name: "Old Stone Bridge",
+    link: "https://images.unsplash.com/photo-1662126459396-8b631baf492f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG9sZCUyMGZvcmVzdCUyMGJyaWRnZXN8ZW58MHx8MHx8fDA%3D",
   },
   {
-    name: "Tunnel with morning light",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
+    name: "Jungle Canyon With a River",
+    link: "https://images.unsplash.com/photo-1543076499-a6133cb932fd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNhdmV8ZW58MHx8MHx8fDA%3D",
   },
   {
-    name: "Moritz Feldman Mtn House",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
+    name: "Forest Trail with Lush Vegetation",
+    link: "https://images.unsplash.com/photo-1669768185505-8c611f00c088?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG91dGRvb3IlMjBoaWtpbmd8ZW58MHx8MHx8fDA%3D",
   },
 ];
 
@@ -53,6 +57,52 @@ const modalCloseBtn = newPostModal.querySelector(".modal__close-btn");
 
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
+
+const cardTemplate = document
+  .querySelector("#card-template")
+  .content.querySelector(".card");
+
+const cardsList = document.querySelector(".cards__list");
+
+
+const previewModal = document.querySelector("#preview-modal");
+const previewModalImageEl = previewModal.querySelector(".modal__image");
+const previewModalCaptionEl = previewModal.querySelector(".modal__caption")
+const previewModalCloseBtnEl = previewModal.querySelector(".modal__close-btn");
+
+previewModalCloseBtnEl.addEventListener("click", () => {
+  closeModal(previewModal);
+});
+
+function getCardEl(data) {
+  const cardEl = cardTemplate.cloneNode(true);
+  const cardTitleEl = cardEl.querySelector(".card__title");
+  const cardImageEl = cardEl.querySelector(".card__image");
+
+  cardTitleEl.textContent = data.name;
+  cardImageEl.alt = data.name;
+  cardImageEl.src = data.link;
+
+  const cardLikeBtnEl = cardEl.querySelector(".card__like-btn");
+  cardLikeBtnEl.addEventListener("click", () => {
+    cardLikeBtnEl.classList.toggle("card__like-btn_active");
+  });
+
+  const cardDeleteBtnEl = cardEl.querySelector(".card__delete-btn");
+  cardDeleteBtnEl.addEventListener("click", () => {
+    cardDeleteBtnEl.closest(".card").remove();
+  });
+
+  cardImageEl.addEventListener("click", () => {
+    previewModalCaptionEl.textContent = data.name;
+    previewModalImageEl.alt = data.name;
+    previewModalImageEl.src = data.link;
+
+    openModal(previewModal);
+  });
+
+  return cardEl;
+}
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
@@ -92,6 +142,12 @@ function handleNewPostModalSubmit(evt) {
   console.log(profileLinkInput.value);
   console.log(profileCaptionInput.value);
 
+  const cardElement = getCardEl({
+    name: profileCaptionInput.value,
+    link: profileLinkInput.value,
+  });
+  cardsList.prepend(cardElement);
+
   newPostForm.reset();
 
   closeModal(newPostModal);
@@ -102,7 +158,7 @@ const addCardModalForm = addCardModal.querySelector(".modal__form");
 
 addCardModalForm.addEventListener("submit", handleNewPostModalSubmit);
 
-initialCards.forEach(function (card) {
-  console.log(card.name);
-  console.log(card.link);
+initialCards.forEach(function (item) {
+  const cardElement = getCardEl(item);
+  cardsList.prepend(cardElement);
 });
