@@ -13,7 +13,7 @@
   transition: opacity 1s linear, visibility 1s linear;
 }
 
-.modal__type-preview{
+.modal_type_preview{
   padding: 16px;
 }
 
@@ -94,13 +94,11 @@
   padding: 0;
   max-width: 40px;
   max-height: 40px;
-
   background-size: contain;
-
 }
 
 .modal__close-btn_type_preview:hover {
-  opacity: 40%;
+  opacity: .4;
 }
 
 .modal__close-btn:hover {
@@ -126,8 +124,8 @@
 }
 
 .modal__image {
-  max-height: 60vh;
-  max-width: 60vw;
+  max-height: 80vh;
+  max-width: 80vw;
   width: 100%;
   object-fit: contain;
   display: block;
@@ -139,19 +137,23 @@
 }
 
 .modal__caption {
+  font-size: 20px;
   background-color: #212121;
   color: #fff;
-  display: inline-block;
-
   border-radius: 8px;
   padding: 4px 8px;
-
+  position: absolute;
+  left: 0;
+  top: calc(100% + 10px);
 }
 
 
 @media screen and (max-width: 480px) {
   .modal__container {
     padding: 22px 12px 12px;
+  }
+  .modal__caption{
+    font-size: 16px;
   }
   .modal__title {
     font-size: 20px;
@@ -160,19 +162,18 @@
     font-weight: 500;
   }
   .modal__input {
-    gap: 8px;
     box-sizing: border-box;
     font-weight: 500;
     font-style: normal;
     font-size: 16px;
   }
   .modal__submit-btn {
+    position: absolute;
     top: 18px;
     right: 12px;
     margin: 0;
     max-width: none;
     width: 100%;
-    gap: 8px;
   }
 
   .modal__close-btn {
@@ -188,5 +189,6 @@
 
   .modal__image{
     max-width: unset;
+
   }
 }
