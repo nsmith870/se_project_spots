@@ -149,10 +149,7 @@ function handleNewPostModalSubmit(evt) {
   closeModal(newPostModal);
 }
 
-const addCardModal = document.querySelector("#new-post-modal");
-const addCardModalForm = addCardModal.querySelector(".modal__form");
-
-addCardModalForm.addEventListener("submit", handleNewPostModalSubmit);
+newPostForm.addEventListener("submit", handleNewPostModalSubmit);
 
 initialCards.forEach(function (item) {
   const cardElement = getCardEl(item);

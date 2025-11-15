@@ -1,4 +1,6 @@
 .card{
+  flex-direction: column;
+  display: flex;
   position: relative;
   font-family: Poppins, Arial, Helvetica, sans-serif;
 }
@@ -6,14 +8,12 @@
   height: 413px;
   width: 100%;
   object-fit: cover;
-  opacity: 100%;
-  display: block;
+  /* opacity: 100%; */
+  /* display: block; */
   border-radius: 10px;
+  cursor: pointer;
 }
-.card__image:hover{
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
+
 .card__title {
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 500;
@@ -52,7 +52,7 @@
 }
 
 .card__like-btn_active:hover{
-  opacity: .5;
+  opacity: 1;
 }
 
 .card__delete-btn{
