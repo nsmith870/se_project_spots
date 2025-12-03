@@ -4,7 +4,7 @@ const settings = {
   submitButtonSelector: ".modal__submit-btn",
   inactiveButtonClass: "modal__submit-btn_disabled",
   inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible"
+  errorClass: "modal__error_visible",
 };
 
 const showInputError = (inputEl, formEl, errorMsg, config) => {
@@ -64,7 +64,6 @@ const setEventListeners = (formEl, config) => {
   const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
   const buttonEl = formEl.querySelector(config.submitButtonSelector);
 
-
   toggleButtonState(inputList, buttonEl, config);
 
   inputList.forEach((inputEl) => {
@@ -81,6 +80,5 @@ const enableValidation = (config) => {
     setEventListeners(formEl, config);
   });
 };
-
 
 enableValidation(settings);

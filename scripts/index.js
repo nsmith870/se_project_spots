@@ -114,7 +114,7 @@ function handleEditProfileModalSubmit(evt) {
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
   evt.target.reset();
- 
+
   closeModal(editProfileModal);
 }
 
@@ -136,7 +136,7 @@ modalCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
-function handleNewPostModalSubmit(evt) {
+function handleNewPostModalSubmit(evt, config) {
   evt.preventDefault();
 
   console.log(profileLinkInput.value);
@@ -146,15 +146,21 @@ function handleNewPostModalSubmit(evt) {
     name: profileCaptionInput.value,
     link: profileLinkInput.value,
   });
+
   cardsList.prepend(cardElement);
+
   evt.target.reset();
-  disableButton(cardSubmitBtn);
-  newPostForm.reset();
+
+
+  disableButton(cardSubmitBtn, config);
 
   closeModal(newPostModal);
 }
 
-newPostForm.addEventListener("submit", handleNewPostModalSubmit);
+
+newPostForm.addEventListener("submit", function (evt) {
+  handleNewPostModalSubmit(evt, settings);
+});
 
 initialCards.forEach(function (item) {
   const cardElement = getCardEl(item);
