@@ -29,6 +29,7 @@ const editProfileButton = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 const closeModalButton = editProfileModal.querySelector(".modal__close-btn");
+const modals = document.querySelectorAll(".modal");
 
 const editProfileNameInput = editProfileModal.querySelector(
   "#profile-name-input"
@@ -118,8 +119,6 @@ function handleEditProfileModalSubmit(evt) {
   closeModal(editProfileModal);
 }
 
-
-
 editProfileForm.addEventListener("submit", handleEditProfileModalSubmit);
 
 const newPostForm = newPostModal.querySelector(".modal__form");
@@ -151,16 +150,27 @@ function handleNewPostModalSubmit(evt, config) {
 
   evt.target.reset();
 
-
   disableButton(cardSubmitBtn, config);
 
   closeModal(newPostModal);
 }
 
-
 newPostForm.addEventListener("submit", function (evt) {
   handleNewPostModalSubmit(evt, settings);
 });
+
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", (evt) => {
+    /* It's necessary to check the target's class before calling closeModal. Doing so makes setting listeners on the close buttons superfluous. */
+    if (
+      evt.target.classList.contains("modal") ||
+      evt.target.classList.contains("modal__close")
+    ) {
+      closeModal(modal);
+    }
+  });
+});
+
 
 initialCards.forEach(function (item) {
   const cardElement = getCardEl(item);
