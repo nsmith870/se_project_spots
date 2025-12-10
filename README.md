@@ -5,6 +5,13 @@
 * Image Sharing
 * User Profiles
 * Community Feedback  
+
+ ## Project Pitch Video
+ 
+ Check out [this video] ## Project Pitch Video
+ 
+ Check out this video https://drive.google.com/file/d/1mFvmGQt7sddYRvUR2ObE76fNLYsl0g_-/view?usp=drive_link, where I describe my 
+ project and some challenges I faced while building it.
  
   
 **Intro**
