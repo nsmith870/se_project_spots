@@ -4,7 +4,7 @@
 
 * Image Sharing
 * User Profiles
-* Community Feedback  
+* Community Feedbackf   
 
  ## Project Pitch Video
  
